@@ -94,6 +94,13 @@ STORE_IN_ROM static const char * const set[] = {
 	"x-real-ip:",
 	"http/1.0 ",
 
+	"_WSI_TOKEN_CLIENT_SENT_PROTOCOLS",
+	"_WSI_TOKEN_CLIENT_PEER_ADDRESS",
+	"_WSI_TOKEN_CLIENT_URI",
+	"_WSI_TOKEN_CLIENT_HOST",
+	"_WSI_TOKEN_CLIENT_ORIGIN",
+	"_WSI_TOKEN_CLIENT_METHOD",
+
 	"", /* not matchable */
 
 };
