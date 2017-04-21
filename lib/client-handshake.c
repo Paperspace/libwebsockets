@@ -115,8 +115,9 @@ lws_client_connect_2(struct lws *wsi)
 		ai.ai_socktype = SOCK_STREAM;
 		ai.ai_flags = AI_CANONNAME;
 
-		if (getaddrinfo(ads, NULL, &ai, &result)) {
-			lwsl_err("getaddrinfo failed\n");
+		int ret = getaddrinfo(ads, NULL, &ai, &result);
+		if (ret) {
+			lwsl_err("getaddrinfo failed with %d\n", ret);
 			cce = "getaddrinfo (ipv4) failed";
 			goto oom4;
 		}
