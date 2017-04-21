@@ -1717,6 +1717,7 @@ lws_finalize_startup(struct lws_context *context)
 	return 0;
 }
 
+#if !defined(_MSC_VER) || _MSC_VER < 1800 /* Visual Studio 2013 already defines this in <stdio.h> */
 int
 lws_snprintf(char *str, size_t size, const char *format, ...)
 {
@@ -1735,7 +1736,7 @@ lws_snprintf(char *str, size_t size, const char *format, ...)
 
 	return n;
 }
-
+#endif
 
 LWS_VISIBLE LWS_EXTERN int
 lws_is_cgi(struct lws *wsi) {
